@@ -8,6 +8,7 @@ import { HeaderComponent } from './user-container/header/header.component';
 import { MovieListComponent } from './user-container/movie-list/movie-list.component';
 import { MovieItemComponent } from './user-container/movie-list/movie-item/movie-item.component';
 import { MovieInputComponent } from './user-container/movie-input/movie-input.component';
+import { WelcomeModalComponent } from './welcome-modal/welcome-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MovieInputComponent } from './user-container/movie-input/movie-input.co
     MovieListComponent,
     MovieItemComponent,
     MovieInputComponent,
+    WelcomeModalComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

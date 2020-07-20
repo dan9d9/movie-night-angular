@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MovieItem } from './user-container/movie-list/movie-item/movie-item.model';
 
@@ -8,22 +8,21 @@ import { MovieItem } from './user-container/movie-list/movie-item/movie-item.mod
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  user1: string;
+  user1: string = 'Somebody';
   user1Array: MovieItem[] = [];
-
-  user2: string;
+  user2: string = 'Anonymous';
   user2Array: MovieItem[] = [];
 
-  ngOnInit(): void {
-    this.user1 = prompt('Enter first user name: ');
-    this.user2 = prompt('Enter second user name: ');
+  showModal = true;
 
-    if (JSON.parse(localStorage.getItem(`${this.user1}List`))) {
-      this.user1Array = JSON.parse(localStorage.getItem(`${this.user1}List`));
-    }
+  getUserData(userData) {
+    this.user1 = userData.user1;
+    this.user1Array = userData.user1Array;
+    this.user2 = userData.user2;
+    this.user2Array = userData.user2Array;
 
-    if (JSON.parse(localStorage.getItem(`${this.user2}List`))) {
-      this.user2Array = JSON.parse(localStorage.getItem(`${this.user2}List`));
-    }
+    this.showModal = false;
   }
+
+  ngOnInit(): void {}
 }

@@ -2,3 +2,9 @@
   max-height: 70%;
   overflow: auto;
 }
+
+@media screen and (min-width: 550px) {
+  .user-list {
+    max-height: 85%;
+  }
+}

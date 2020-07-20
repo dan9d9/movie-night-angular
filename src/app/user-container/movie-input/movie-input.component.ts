@@ -9,7 +9,6 @@ export class MovieInputComponent implements OnInit {
   @Output() addMovie: EventEmitter<string> = new EventEmitter();
 
   title: string = '';
-  // user: string;
 
   handleAddMovie() {
     if (!this.title.trim()) return;

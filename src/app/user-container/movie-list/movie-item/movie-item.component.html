@@ -1,5 +1,7 @@
 <div [ngClass]="{ approved: movieItem.approved }" class="movie-item">
-  <p>{{ movieItem.title }}</p>
+  <p [ngStyle]="{ color: movieItem.approved ? 'white' : 'black' }">
+    {{ movieItem.title }}
+  </p>
   <div>
     <button (click)="handleBtnClick('delete')">Delete</button>
     <button (click)="handleBtnClick('toggleApprove')">Approve</button>

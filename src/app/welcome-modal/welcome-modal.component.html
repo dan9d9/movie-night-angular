@@ -1,0 +1,34 @@
+<div class="welcome-modal__wrapper">
+  <div class="welcome-modal">
+    <div>
+      <h1>Welcome to Movie Night</h1>
+      <p>
+        Enter the user names below to retrieve your (locally stored) list of
+        movies, or to start a new one!
+      </p>
+    </div>
+    <form class="welcome-modal__form">
+      <div class="welcome-modal__form-div">
+        <label for="user1">User One</label>
+        <input
+          name="user1"
+          type="text"
+          [(ngModel)]="user1"
+          (keydown.enter)="handleSubmit($event)"
+        />
+      </div>
+      <div class="welcome-modal__form-div">
+        <label for="user2">User Two</label>
+        <input
+          name="user2"
+          type="text"
+          [(ngModel)]="user2"
+          (keydown.enter)="handleSubmit($event)"
+        />
+      </div>
+      <button type="submit" (click)="handleSubmit($event)">
+        Get Started
+      </button>
+    </form>
+  </div>
+</div>
