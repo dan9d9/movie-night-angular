@@ -1,0 +1,12 @@
+.movie-item {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: white;
+
+  margin-bottom: 0.5rem;
+}
+
+.approved {
+  background-color: green;
+}

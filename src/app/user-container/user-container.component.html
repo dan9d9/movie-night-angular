@@ -1,4 +1,8 @@
 <section class="user-component-section">
   <app-header></app-header>
-  <app-movie-list></app-movie-list>
+  <app-movie-input (addMovie)="onMovieAdded($event)"></app-movie-input>
+  <app-movie-list
+    [movies]="movies"
+    (movieBtnClicked)="handleMovieBtnClick($event)"
+  ></app-movie-list>
 </section>

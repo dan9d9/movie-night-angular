@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+import { MovieItem } from './movie-item.model';
 
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
-  styleUrls: ['./movie-item.component.css']
+  styleUrls: ['./movie-item.component.css'],
 })
 export class MovieItemComponent implements OnInit {
+  @Output() movieBtnClicked: EventEmitter<{
+    idx: number;
+    action: string;
+  }> = new EventEmitter();
 
-  constructor() { }
+  @Input() movieItem: MovieItem;
+  @Input() movieIdx: number;
 
-  ngOnInit(): void {
+  handleBtnClick(action: string) {
+    this.movieBtnClicked.emit({ idx: this.movieIdx, action });
   }
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }

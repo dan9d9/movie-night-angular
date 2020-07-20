@@ -9,6 +9,18 @@
   width: 100%;
   height: 50%;
   padding: 1rem;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.user-container-wrapper__left {
+  background-image: url("../assets/images/freeimg_cool.jpg");
+}
+
+.user-container-wrapper__right {
+  background-image: url("../assets/images/freeimg_warm.jpg");
 }
 
 @media screen and (min-width: 550px) {

@@ -1,0 +1,4 @@
+<div class="movie-input-container">
+  <input type="text" [(ngModel)]="title" (keyup.enter)="handleAddMovie()" />
+  <button (click)="handleAddMovie()">Add Movie</button>
+</div>

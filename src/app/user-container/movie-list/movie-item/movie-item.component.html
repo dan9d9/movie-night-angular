@@ -1,1 +1,7 @@
-<p>movie-item works!</p>
+<div [ngClass]="{ approved: movieItem.approved }" class="movie-item">
+  <p>{{ movieItem.title }}</p>
+  <div>
+    <button (click)="handleBtnClick('delete')">Delete</button>
+    <button (click)="handleBtnClick('toggleApprove')">Approve</button>
+  </div>
+</div>
