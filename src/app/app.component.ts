@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   showModal = true;
 
-  getUserData(userData) {
+  receiveUserData(userData) {
     this.user1 = userData.user1;
     this.user1Array = userData.user1Array;
     this.user2 = userData.user2;
