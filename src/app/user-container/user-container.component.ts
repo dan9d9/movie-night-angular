@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MovieItem } from './movie-list/movie-item/movie-item.model';
 
@@ -8,18 +8,22 @@ import { MovieItem } from './movie-list/movie-item/movie-item.model';
   styleUrls: ['./user-container.component.css'],
 })
 export class UserContainerComponent implements OnInit {
-  movies: MovieItem[] = [];
+  @Input() user: string;
+  @Input() userMovies: MovieItem[];
 
   onMovieAdded(movieTitle) {
-    this.movies.push(new MovieItem(movieTitle, 'user'));
+    this.userMovies.push(new MovieItem(movieTitle, this.user));
+    localStorage.setItem(`${this.user}List`, JSON.stringify(this.userMovies));
   }
 
   handleMovieBtnClick(movieBtn) {
     if (movieBtn.action === 'delete') {
-      this.movies.splice(movieBtn.idx, 1);
+      this.userMovies.splice(movieBtn.idx, 1);
     } else if (movieBtn.action === 'toggleApprove') {
-      this.movies[movieBtn.idx].approved = !this.movies[movieBtn.idx].approved;
+      this.userMovies[movieBtn.idx].approved = !this.userMovies[movieBtn.idx]
+        .approved;
     }
+    localStorage.setItem(`${this.user}List`, JSON.stringify(this.userMovies));
   }
 
   constructor() {}
